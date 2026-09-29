@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Admin | BGTI Updates</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- HEADER -->
+
+    <header class="header">
+
+        <div class="college-logo">
+
+            <div class="logo-circle">
+                <img src="images/bgti-logo.jpg" alt="BGTI Logo" class="bgti-logo">
+            </div>
+
+            <div>
+
+                <h1>
+                    BGTI Updates
+                </h1>
+
+                <p>
+                    BRILLIANT GROUP OF INSTITUTIONS
+                </p>
+
+            </div>
+
+        </div>
+
+    </header>
+
+
+    <!-- NAVIGATION -->
+
+    <nav class="navbar">
+
+        <div class="nav-container">
+
+            <a href="index.html">
+                Home
+            </a>
+
+            <a href="events.html">
+                Events
+            </a>
+
+            <a href="notifications.html">
+                Notifications
+            </a>
+
+            <a href="sports.html">
+                Sports
+            </a>
+
+            <a href="clubs.html">
+                Clubs
+            </a>
+
+            <a href="about.html">
+                About
+            </a>
+
+            <a href="admin.html">
+                Admin
+            </a>
+
+        </div>
+
+    </nav>
+
+
+    <!-- PAGE HEADER -->
+
+    <section class="page-header">
+
+        <h2>
+            Admin Dashboard
+        </h2>
+
+        <p>
+            Manage BGTI Events and notifications.
+        </p>
+
+    </section>
+
+
+    <!-- ADMIN -->
+
+    <section class="admin-section">
+
+        <div class="admin-container">
+
+
+            <!-- ADD EVENT -->
+
+            <h2>
+                📅 Add Event
+            </h2>
+
+            <form id="eventForm">
+
+                <label for="eventTitle">
+                    Event Title
+                </label>
+
+                <input
+                    type="text"
+                    id="eventTitle"
+                    placeholder="Enter event title"
+                    required
+                >
+
+
+                <label for="eventDescription">
+                    Description
+                </label>
+
+                <textarea
+                    id="eventDescription"
+                    placeholder="Enter event description"
+                    required>
+                </textarea>
+
+
+                <label for="eventDate">
+                    Date
+                </label>
+
+                <input
+                    type="date"
+                    id="eventDate"
+                    required
+                >
+
+
+                <label for="eventLocation">
+                    Location
+                </label>
+
+                <input
+                    type="text"
+                    id="eventLocation"
+                    placeholder="Example: College Ground"
+                    required
+                >
+
+
+                <label for="eventCategory">
+                    Category
+                </label>
+
+                <select id="eventCategory">
+
+                    <option value="General">
+                        General
+                    </option>
+
+                    <option value="Academic">
+                        Academic
+                    </option>
+
+                    <option value="<img src="images/bgti-logo.jpg" alt="BGTI Logo" class="bgti-logo">ltural">
+                        <img src="images/bgti-logo.jpg" alt="BGTI Logo" class="bgti-logo">ltural
+                    </option>
+
+                    <option value="Technical">
+                        Technical
+                    </option>
+
+                    <option value="Sports">
+                        Sports
+                    </option>
+
+                </select>
+
+
+                <button type="submit">
+                    Add Event
+                </button>
+
+            </form>
+
+
+            <hr style="margin: 35px 0;">
+
+
+            <!-- ADD NOTIFICATION -->
+
+            <h2>
+                🔔 Add Notification
+            </h2>
+
+            <form id="notificationForm">
+
+                <label for="notificationTitle">
+                    Notification Title
+                </label>
+
+                <input
+                    type="text"
+                    id="notificationTitle"
+                    placeholder="Enter notification title"
+                    required
+                >
+
+
+                <label for="notificationDescription">
+                    Description
+                </label>
+
+                <textarea
+                    id="notificationDescription"
+                    placeholder="Enter notification details"
+                    required>
+                </textarea>
+
+
+                <label for="notificationDate">
+                    Date
+                </label>
+
+                <input
+                    type="date"
+                    id="notificationDate"
+                    required
+                >
+
+
+                <button type="submit">
+                    Add Notification
+                </button>
+
+            </form>
+
+
+            <hr style="margin: 35px 0;">
+
+
+            <!-- MANAGE EVENTS -->
+
+            <h2>
+                📋 Manage Events
+            </h2>
+
+            <div id="adminEventList">
+
+                <p class="admin-message">
+                    No events available.
+                </p>
+
+            </div>
+
+
+            <hr style="margin: 35px 0;">
+
+
+            <!-- MANAGE NOTIFICATIONS -->
+
+            <h2>
+                🔔 Manage Notifications
+            </h2>
+
+            <div id="adminNotificationList">
+
+                <p class="admin-message">
+                    No notifications available.
+                </p>
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+
+    <!-- FOOTER -->
+
+    <footer>
+
+        <h3>
+            BGTI Updates
+        </h3>
+
+        <p>
+            BRILLIANT GROUP OF INSTITUTIONS
+        </p>
+
+        <p>
+            © 2026 BGTI Updates.
+            All Rights Reserved.
+        </p>
+
+    </footer>
+
+
+    <!-- JAVASCRIPT -->
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,1419 @@
+/* ================================= */
+/* GENERAL */
+/* ================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #f5f7fb;
+    color: #1f2937;
+    line-height: 1.6;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+
+/* ================================= */
+/* HEADER */
+/* ================================= */
+
+.header {
+    background: #123c69;
+    color: white;
+    padding: 22px 7%;
+}
+
+.college-logo {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.logo-circle {
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    overflow: hidden;
+    flex-shrink: 0;
+}
+
+.logo-circle .bgti-logo {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    object-position: center;
+    display: block;
+}
+
+.college-logo h1 {
+    font-size: 28px;
+}
+
+.college-logo p {
+    font-size: 13px;
+    opacity: 0.9;
+}
+
+
+/* ================================= */
+/* NAVIGATION */
+/* ================================= */
+
+.navbar {
+    background: #0d2f52;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.nav-container {
+    display: flex;
+    justify-content: center;
+    gap: 5px;
+    overflow-x: auto;
+}
+
+.nav-container a {
+    color: white;
+    padding: 14px 16px;
+    white-space: nowrap;
+}
+
+.nav-container a:hover {
+    background: #2563eb;
+}
+
+
+/* ================================= */
+/* ANNOUNCEMENT */
+/* ================================= */
+
+.announcement {
+    background: #fef3c7;
+    padding: 12px 7%;
+    text-align: center;
+    color: #92400e;
+}
+
+
+/* ================================= */
+/* HERO */
+/* ================================= */
+
+.hero {
+    padding: 75px 7%;
+    text-align: center;
+    background: white;
+}
+
+.hero h2 {
+    font-size: 42px;
+    color: #123c69;
+    margin-bottom: 12px;
+}
+
+.hero p {
+    max-width: 750px;
+    margin: auto;
+    color: #64748b;
+}
+
+.btn {
+    display: inline-block;
+    background: #2563eb;
+    color: white;
+
+    border: none;
+    padding: 11px 18px;
+
+    border-radius: 7px;
+
+    <img src="images/bgti-logo.jpg" alt="BGTI Logo" class="bgti-logo">rsor: pointer;
+    font-weight: 600;
+
+    margin-top: 18px;
+}
+
+.btn:hover {
+    background: #1d4ed8;
+}
+
+
+/* ================================= */
+/* COMMON SECTIONS */
+/* ================================= */
+
+.section {
+    padding: 50px 7%;
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: 28px;
+    color: #123c69;
+}
+
+
+/* ================================= */
+/* QUICK ACCESS */
+/* ================================= */
+
+.quick-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 20px;
+}
+
+
+/* ================================= */
+/* COMMON CARDS */
+/* ================================= */
+
+.card {
+    background: white;
+
+    border-radius: 12px;
+
+    padding: 25px;
+
+    box-shadow:
+        0 4px 16px rgba(0, 0, 0, 0.06);
+}
+
+.card h3 {
+    color: #123c69;
+    margin-bottom: 8px;
+}
+
+.card p {
+    color: #64748b;
+}
+
+.card:hover {
+    transform: translateY(-3px);
+    transition: 0.2s;
+}
+
+
+/* ================================= */
+/* CARD GRID */
+/* ================================= */
+
+.card-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 20px;
+}
+
+
+/* ================================= */
+/* PAGE HEADER */
+/* ================================= */
+
+.page-header {
+    padding: 45px 7%;
+
+    background: #eaf2fb;
+
+    text-align: center;
+}
+
+.page-header h2 {
+    font-size: 36px;
+    color: #123c69;
+}
+
+.page-header p {
+    color: #64748b;
+}
+
+
+/* ================================= */
+/* EVENTS */
+/* ================================= */
+
+.events-section {
+    padding: 40px 7%;
+}
+
+.event-search {
+    text-align: center;
+
+    padding: 30px 7% 5px;
+}
+
+.event-search input {
+    width: min(700px, 100%);
+
+    padding: 14px;
+
+    border:
+        1px solid #d1d5db;
+
+    border-radius: 8px;
+
+    font-size: 16px;
+}
+
+.event-list {
+    max-width: 900px;
+
+    margin: auto;
+
+    display: grid;
+
+    gap: 18px;
+}
+
+.event-card {
+    background: white;
+
+    border-radius: 12px;
+
+    padding: 22px;
+
+    display: flex;
+
+    gap: 20px;
+
+    box-shadow:
+        0 4px 16px rgba(0, 0, 0, 0.06);
+
+    <img src="images/bgti-logo.jpg" alt="BGTI Logo" class="bgti-logo">rsor: pointer;
+}
+
+.event-date {
+    min-width: 75px;
+
+    height: 75px;
+
+    background: #2563eb;
+
+    color: white;
+
+    border-radius: 10px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: center;
+}
+
+.event-date .day {
+    font-size: 25px;
+    font-weight: 800;
+}
+
+.event-date .month {
+    font-size: 13px;
+}
+
+.event-details {
+    flex: 1;
+}
+
+.event-details h3 {
+    color: #123c69;
+
+    margin-bottom: 6px;
+}
+
+.event-details p {
+    color: #64748b;
+}
+
+.event-info {
+    display: flex;
+
+    gap: 20px;
+
+    margin-top: 10px;
+
+    font-size: 14px;
+
+    color: #475569;
+}
+
+
+/* ================================= */
+/* NOTIFICATIONS */
+/* ================================= */
+
+.notifications-section {
+    padding: 40px 7%;
+}
+
+.notification-list {
+    max-width: 900px;
+
+    margin: auto;
+
+    display: grid;
+
+    gap: 18px;
+}
+
+.notification-card {
+    background: white;
+
+    border-radius: 12px;
+
+    padding: 22px;
+
+    display: flex;
+
+    gap: 20px;
+
+    box-shadow:
+        0 4px 16px rgba(0, 0, 0, 0.06);
+}
+
+.notification-icon {
+    font-size: 30px;
+}
+
+.notification-content {
+    flex: 1;
+}
+
+.notification-content h3 {
+    color: #123c69;
+
+    margin-bottom: 6px;
+}
+
+.notification-content p {
+    color: #64748b;
+}
+
+.notification-date {
+    display: block;
+
+    margin-top: 10px;
+
+    color: #64748b;
+
+    font-size: 14px;
+}
+
+
+/* ================================= */
+/* SPORTS */
+/* ================================= */
+
+.sports-page {
+    padding: 40px 7%;
+}
+
+.sports-container {
+    max-width: 1100px;
+
+    margin: auto;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, 1fr);
+
+    gap: 22px;
+}
+
+.sports-big-card {
+    background: white;
+
+    border-radius: 12px;
+
+    overflow: hidden;
+
+    box-shadow:
+        0 4px 16px rgba(0, 0, 0, 0.06);
+}
+
+.sports-image {
+    height: 150px;
+
+    background: #dbeafe;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    font-size: 60px;
+}
+
+.sports-content {
+    padding: 22px;
+}
+
+.sports-category {
+    color: #2563eb;
+
+    font-weight: bold;
+
+    font-size: 13px;
+}
+
+.sports-content h3 {
+    color: #123c69;
+
+    margin: 5px 0;
+}
+
+.sports-content p {
+    color: #64748b;
+}
+
+.results-section {
+    padding: 40px 0;
+}
+
+.results-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 20px;
+}
+
+.result-status {
+    font-weight: bold;
+
+    color: #16a34a;
+}
+
+
+/* ================================= */
+/* CLUBS */
+/* ================================= */
+
+.clubs-section {
+    padding: 40px 7%;
+}
+
+.clubs-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 20px;
+
+    max-width: 1100px;
+
+    margin: auto;
+}
+
+.club-card {
+    text-align: center;
+
+    background: white;
+
+    padding: 28px;
+
+    border-radius: 12px;
+
+    box-shadow:
+        0 4px 16px rgba(0, 0, 0, 0.06);
+}
+
+.club-icon {
+    font-size: 42px;
+
+    margin-bottom: 10px;
+}
+
+.club-card h3 {
+    color: #123c69;
+
+    margin-bottom: 8px;
+}
+
+.club-card p {
+    color: #64748b;
+}
+
+
+/* ================================= */
+/* ABOUT */
+/* ================================= */
+
+.about-section {
+    padding: 40px 7%;
+}
+
+.about-container {
+    max-width: 900px;
+
+    margin: auto;
+
+    display: grid;
+
+    gap: 20px;
+}
+
+.about-card {
+    background: white;
+
+    padding: 28px;
+
+    border-radius: 12px;
+
+    box-shadow:
+        0 4px 16px rgba(0, 0, 0, 0.06);
+}
+
+.about-card h3 {
+    color: #123c69;
+
+    margin-bottom: 10px;
+}
+
+
+/* ================================= */
+/* ADMIN */
+/* ================================= */
+
+.admin-section {
+    padding: 35px 7%;
+}
+
+.admin-container {
+    max-width: 750px;
+
+    margin: auto;
+
+    background: white;
+
+    padding: 30px;
+
+    border-radius: 12px;
+
+    box-shadow:
+        0 4px 16px rgba(0, 0, 0, 0.06);
+}
+
+.admin-container h2 {
+    text-align: center;
+
+    color: #123c69;
+
+    margin-bottom: 22px;
+}
+
+.admin-container form {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 8px;
+}
+
+.admin-container label {
+    font-weight: bold;
+
+    margin-top: 8px;
+}
+
+.admin-container input,
+.admin-container textarea,
+.admin-container select {
+    padding: 12px;
+
+    border:
+        1px solid #d1d5db;
+
+    border-radius: 7px;
+
+    font-size: 15px;
+
+    font-family: inherit;
+}
+
+.admin-container textarea {
+    min-height: 100px;
+
+    resize: vertical;
+}
+
+.admin-container button {
+    border: none;
+
+    background: #2563eb;
+
+    color: white;
+
+    padding: 11px 16px;
+
+    border-radius: 7px;
+
+    <img src="images/bgti-logo.jpg" alt="BGTI Logo" class="bgti-logo">rsor: pointer;
+
+    font-weight: bold;
+
+    margin-top: 10px;
+}
+
+.admin-container button:hover {
+    background: #1d4ed8;
+}
+
+.admin-item {
+    display: flex;
+
+    justify-content: space-between;
+
+    gap: 15px;
+
+    align-items: center;
+
+    padding: 15px;
+
+    border:
+        1px solid #e5e7eb;
+
+    border-radius: 8px;
+
+    margin-bottom: 10px;
+}
+
+.admin-item h3 {
+    color: #123c69;
+}
+
+.admin-item p {
+    font-size: 14px;
+
+    color: #64748b;
+}
+
+.delete-btn {
+    border: none;
+
+    background: #dc2626;
+
+    color: white;
+
+    padding: 10px 15px;
+
+    border-radius: 7px;
+
+    <img src="images/bgti-logo.jpg" alt="BGTI Logo" class="bgti-logo">rsor: pointer;
+
+    font-weight: bold;
+}
+
+.delete-btn:hover {
+    background: #b91c1c;
+}
+
+.admin-message {
+    text-align: center;
+
+    color: #64748b;
+
+    padding: 15px;
+}
+
+
+/* ================================= */
+/* EVENT POPUP */
+/* ================================= */
+
+.event-modal {
+    display: none;
+
+    position: fixed;
+
+    inset: 0;
+
+    background: rgba(0, 0, 0, 0.6);
+
+    align-items: center;
+
+    justify-content: center;
+
+    z-index: 1000;
+
+    padding: 20px;
+}
+
+.event-modal-content {
+    background: white;
+
+    max-width: 600px;
+
+    width: 100%;
+
+    padding: 30px;
+
+    border-radius: 12px;
+
+    position: relative;
+}
+
+.event-modal-content h2 {
+    color: #123c69;
+
+    margin-bottom: 12px;
+}
+
+.event-modal-content > p {
+    color: #64748b;
+}
+
+.close-modal {
+    position: absolute;
+
+    right: 15px;
+
+    top: 8px;
+
+    border: none;
+
+    background: none;
+
+    font-size: 30px;
+
+    <img src="images/bgti-logo.jpg" alt="BGTI Logo" class="bgti-logo">rsor: pointer;
+}
+
+.modal-info {
+    background: #f8fafc;
+
+    padding: 15px;
+
+    border-radius: 8px;
+
+    margin-top: 18px;
+}
+
+
+/* ================================= */
+/* FOOTER */
+/* ================================= */
+
+footer {
+    background: #0d2f52;
+
+    color: white;
+
+    text-align: center;
+
+    padding: 35px 7%;
+
+    margin-top: 20px;
+}
+
+footer h3 {
+    margin-bottom: 8px;
+}
+
+
+/* ================================= */
+/* EMPTY MESSAGE */
+/* ================================= */
+
+.empty {
+    text-align: center;
+
+    color: #64748b;
+
+    padding: 30px;
+}
+
+
+/* ================================= */
+/* TABLET */
+/* ================================= */
+
+@media (max-width: 800px) {
+
+    .quick-grid,
+    .card-grid,
+    .results-grid,
+    .clubs-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .sports-container {
+        grid-template-columns: 1fr;
+    }
+
+    .hero h2 {
+        font-size: 32px;
+    }
+
+}
+
+
+/* ================================= */
+/* MOBILE */
+/* ================================= */
+
+@media (max-width: 600px) {
+
+    .header {
+        padding: 20px 15px;
+    }
+
+    .college-logo {
+        flex-direction: column;
+
+        text-align: center;
+    }
+
+    .college-logo h1 {
+        font-size: 24px;
+    }
+
+    .college-logo p {
+        font-size: 12px;
+    }
+
+    .nav-container {
+        justify-content: flex-start;
+    }
+
+    .nav-container a {
+        padding: 12px 10px;
+
+        font-size: 14px;
+    }
+
+    .quick-grid,
+    .card-grid,
+    .results-grid,
+    .clubs-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .hero {
+        padding: 50px 20px;
+    }
+
+    .hero h2 {
+        font-size: 30px;
+    }
+
+    .section {
+        padding: 35px 15px;
+    }
+
+    .page-header {
+        padding: 35px 15px;
+    }
+
+    .page-header h2 {
+        font-size: 28px;
+    }
+
+    .events-section,
+    .notifications-section,
+    .sports-page,
+    .clubs-section,
+    .about-section {
+        padding: 30px 15px;
+    }
+
+    .event-card,
+    .notification-card {
+        flex-direction: column;
+    }
+
+    .event-date {
+        width: 75px;
+    }
+
+    .event-info {
+        flex-direction: column;
+
+        gap: 3px;
+    }
+
+    .admin-section {
+        padding: 30px 15px;
+    }
+
+    .admin-container {
+        padding: 25px 20px;
+    }
+
+    .admin-item {
+        flex-direction: column;
+
+        align-items: flex-start;
+    }
+
+    footer {
+        padding: 30px 15px;
+    }
+
+}
+/* BGTI MAIN LOGO */
+
+.main-logo {
+    width: 90px;
+    height: 90px;
+    object-fit: contain;
+    border-radius: 50%;
+    margin-right: 15px;
+}
+
+.college-logo {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.college-logo h1 {
+    margin: 0;
+}
+
+.college-logo p {
+    margin: 5px 0 0;
+}
+/* =========================================
+   BGTI OFFICIAL HEADER
+   ========================================= */
+
+.main-header {
+    width: 100%;
+    background: white;
+    border-bottom: 3px solid #0b4f8a;
+}
+
+.header-content {
+    max-width: 1200px;
+    margin: auto;
+
+    display: flex;
+    align-items: center;
+
+    padding: 20px 30px;
+}
+
+
+/* LOGO */
+
+.logo-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    margin-right: 30px;
+}
+
+.bgti-logo {
+    width: 130px;
+    height: 130px;
+
+    object-fit: contain;
+
+    display: block;
+}
+
+
+/* COLLEGE INFORMATION */
+
+.college-information {
+    text-align: left;
+}
+
+.college-information h1 {
+    margin: 0;
+
+    font-size: 30px;
+    font-weight: 800;
+
+    color: #123f68;
+
+    letter-spacing: 0.5px;
+}
+
+.college-information h2 {
+    margin: 6px 0;
+
+    font-size: 19px;
+    font-weight: 700;
+
+    color: #555;
+}
+
+.college-information h3 {
+    margin: 10px 0 2px;
+
+    font-size: 25px;
+
+    color: #0b4f8a;
+}
+
+.college-information p {
+    margin: 0;
+
+    font-size: 15px;
+
+    color: #666;
+}
+
+
+/* MOBILE */
+
+@media (max-width: 700px) {
+
+    .header-content {
+        flex-direction: column;
+
+        text-align: center;
+
+        padding: 20px 15px;
+    }
+
+    .logo-container {
+        margin-right: 0;
+        margin-bottom: 15px;
+    }
+
+    .bgti-logo {
+        width: 120px;
+        height: 120px;
+    }
+
+    .college-information {
+        text-align: center;
+    }
+
+    .college-information h1 {
+        font-size: 22px;
+    }
+
+    .college-information h2 {
+        font-size: 16px;
+    }
+
+    .college-information h3 {
+        font-size: 22px;
+    }
+
+}
+/* ===== BGTI LOGO FIX ===== */
+
+.logo-container {
+    width: 160px !important;
+    height: 160px !important;
+
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+
+    flex-shrink: 0 !important;
+    overflow: visible !important;
+}
+
+.bgti-logo {
+    display: block !important;
+
+    width: 150px !important;
+    height: 150px !important;
+
+    max-width: none !important;
+    max-height: none !important;
+
+    object-fit: contain !important;
+
+    visibility: visible !important;
+    opacity: 1 !important;
+}
+/* =====================================================
+   BGTI UPDATES - COMMON CAMPUS BACKGROUND
+   ===================================================== */
+
+html {
+    min-height: 100%;
+}
+
+body {
+    min-height: 100vh;
+    margin: 0;
+
+    background-image: url("images/bgti-background.png");
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+
+    font-family: Arial, sans-serif;
+}
+
+
+/* =====================================================
+   HEADER
+   ===================================================== */
+
+.main-header {
+    background: rgba(255, 255, 255, 0.94);
+    backdrop-filter: blur(5px);
+}
+
+
+/* =====================================================
+   NAVIGATION
+   ===================================================== */
+
+.navbar {
+    background: rgba(5, 42, 78, 0.96);
+}
+
+
+/* =====================================================
+   ANNOUNCEMENT
+   ===================================================== */
+
+.announcement {
+    background: rgba(255, 244, 190, 0.95);
+}
+
+
+/* =====================================================
+   HERO
+   ===================================================== */
+
+.hero {
+    background: rgba(255, 255, 255, 0.82);
+    backdrop-filter: blur(4px);
+}
+
+
+/* =====================================================
+   SECTIONS
+   ===================================================== */
+
+.section {
+    background: rgba(255, 255, 255, 0.82);
+    backdrop-filter: blur(4px);
+}
+
+
+/* =====================================================
+   CARDS
+   ===================================================== */
+
+.card {
+    background: rgba(255, 255, 255, 0.94);
+    backdrop-filter: blur(5px);
+}
+
+
+/* =====================================================
+   FOOTER
+   ===================================================== */
+
+footer {
+    background: rgba(4, 35, 65, 0.96);
+}
+/* =====================================================
+   HOME PAGE - SHOW MORE OF THE CAMPUS BACKGROUND
+   ===================================================== */
+
+.home-page .hero {
+    background: rgba(255, 255, 255, 0.45);
+}
+
+.home-page .section {
+    background: rgba(255, 255, 255, 0.45);
+}
+
+.home-page .card {
+    background: rgba(255, 255, 255, 0.80);
+}
+
+.home-page .announcement {
+    background: rgba(255, 244, 190, 0.85);
+}
+/* =====================================================
+   BGTI UPDATES - PREMIUM HOME PAGE
+   ===================================================== */
+
+/* Keep the campus image strongly visible */
+.home-page .hero {
+    background: rgba(255, 255, 255, 0.28);
+    backdrop-filter: blur(2px);
+
+    min-height: 360px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    text-align: center;
+
+    padding: 50px 20px;
+}
+
+/* Hero heading */
+.home-page .hero h2 {
+    font-size: 48px;
+    color: #ffffff;
+
+    text-shadow:
+        2px 2px 5px rgba(0, 0, 0, 0.75);
+
+    margin-bottom: 15px;
+}
+
+/* Hero paragraph */
+.home-page .hero p {
+    max-width: 800px;
+
+    font-size: 19px;
+    line-height: 1.6;
+
+    color: #ffffff;
+
+    text-shadow:
+        1px 1px 4px rgba(0, 0, 0, 0.8);
+}
+
+/* Quick access area - transparent */
+.home-page .section {
+    background: transparent;
+    backdrop-filter: none;
+}
+
+/* Section headings */
+.home-page .section-title {
+    color: #ffffff;
+
+    font-size: 32px;
+
+    text-align: center;
+
+    text-shadow:
+        2px 2px 5px rgba(0, 0, 0, 0.8);
+}
+
+/* Cards remain readable */
+.home-page .card {
+    background: rgba(255, 255, 255, 0.88);
+
+    border-radius: 15px;
+
+    box-shadow:
+        0 8px 25px rgba(0, 0, 0, 0.25);
+
+    transition: transform 0.25s ease,
+                box-shadow 0.25s ease;
+}
+
+/* Card hover */
+.home-page .card:hover {
+    transform: translateY(-7px);
+
+    box-shadow:
+        0 14px 30px rgba(0, 0, 0, 0.35);
+}
+
+/* Latest event/notification cards */
+.home-page .card-grid {
+    background: transparent;
+}
+
+
+/* =====================================================
+   EXPLORE EVENTS BUTTON
+   ===================================================== */
+
+.home-page .btn {
+    background: #0b63ce;
+
+    color: white;
+
+    padding: 14px 28px;
+
+    border-radius: 8px;
+
+    font-size: 17px;
+    font-weight: bold;
+
+    text-decoration: none;
+
+    box-shadow:
+        0 5px 15px rgba(0, 0, 0, 0.3);
+
+    transition: 0.25s;
+}
+
+.home-page .btn:hover {
+    transform: translateY(-3px);
+
+    background: #084c9e;
+}
+
+
+/* =====================================================
+   MOBILE
+   ===================================================== */
+
+@media (max-width: 700px) {
+
+    .home-page .hero {
+        min-height: 320px;
+
+        padding: 40px 15px;
+    }
+
+    .home-page .hero h2 {
+        font-size: 32px;
+    }
+
+    .home-page .hero p {
+        font-size: 16px;
+    }
+
+    .home-page .section-title {
+        font-size: 26px;
+    }
+}
+/* BGTI HEADER LOGO FIX */
+.logo-circle {
+    width: 90px !important;
+    height: 90px !important;
+    min-width: 90px !important;
+    min-height: 90px !important;
+    border-radius: 50% !important;
+    overflow: hidden !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    background: white !important;
+}
+
+.logo-circle .bgti-logo {
+    width: 100% !important;
+    height: 100% !important;
+    max-width: none !important;
+    max-height: none !important;
+    object-fit: contain !important;
+    object-position: center !important;
+    display: block !important;
+}

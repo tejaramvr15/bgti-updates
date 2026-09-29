@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Test Event</title>
+</head>
+<body>
+
+    <h1>BGTI Updates - Test Event</h1>
+
+    <button onclick="addEvent()">Add Test Event</button>
+
+    <p id="result"></p>
+
+    <script>
+        async function addEvent() {
+            const eventData = {
+                title: "BGTI Test Event",
+                description: "This is our first test event.",
+                date: "2026-09-28",
+                venue: "KNRR College Ground",
+                category: "College Event"
+            };
+
+            try {
+                const response = await fetch("http://localhost:5000/api/events", {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json"
+                    },
+                    body: JSON.stringify(eventData)
+                });
+
+                const data = await response.json();
+
+                document.getElementById("result").innerText =
+                    response.ok
+                        ? "Event added successfully!"
+                        : "Error: " + data.message;
+
+            } catch (error) {
+                document.getElementById("result").innerText =
+                    "Connection error: " + error.message;
+            }
+        }
+    </script>
+
+</body>
+</html>
