@@ -1052,54 +1052,52 @@ if (homeNotifications) {
 
 }
 
-
 // =====================================
 // ADMIN - ADD EVENT
 // =====================================
 
 const eventForm =
-    do<img src="images/bgti-logo.jpg" alt="BGTI Logo" class="bgti-logo">ment.getElementById(
-        "eventForm"
-    );
-
+    document.getElementById("eventForm");
 
 if (eventForm) {
 
     eventForm.addEventListener(
         "submit",
-        function (event) {
+        async function (event) {
 
             event.preventDefault();
 
-
             const title =
-                do<img src="images/bgti-logo.jpg" alt="BGTI Logo" class="bgti-logo">ment.getElementById(
+                document.getElementById(
                     "eventTitle"
                 ).value.trim();
 
-
             const description =
-                do<img src="images/bgti-logo.jpg" alt="BGTI Logo" class="bgti-logo">ment.getElementById(
+                document.getElementById(
                     "eventDescription"
                 ).value.trim();
 
-
             const date =
-                do<img src="images/bgti-logo.jpg" alt="BGTI Logo" class="bgti-logo">ment.getElementById(
+                document.getElementById(
                     "eventDate"
                 ).value;
 
+            const venue =
+                document.getElementById(
+                    "eventLocation"
+                ).value.trim();
 
-            const eventLocation =
-    do<img src="images/bgti-logo.jpg" alt="BGTI Logo" class="bgti-logo">ment.getElementById("eventLocation").value.trim();
-    alert(title + " | " + description + " | " + date + " | " + eventLocation);
-
+            const category =
+                document.getElementById(
+                    "eventCategory"
+                ).value;
 
             if (
                 !title ||
                 !description ||
                 !date ||
-                !eventLocation
+                !venue ||
+                !category
             ) {
 
                 alert(
@@ -1107,77 +1105,73 @@ if (eventForm) {
                 );
 
                 return;
-
             }
-
-
-            const selectedDate =
-                new Date(
-                    date + "T00:00:00"
-                );
-
 
             const newEvent = {
 
-                day:
-                    String(
-                        selectedDate.getDate()
-                    ).padStart(2, "0"),
+                title: title,
 
-                month:
-                    selectedDate
-                        .toLocaleString(
-                            "en-US",
-                            {
-                                month: "short"
-                            }
-                        )
-                        .toUpperCase(),
+                description: description,
 
-                title:
-                    title,
+                date: date,
 
-                description:
-                    description,
+                venue: venue,
 
-                date:
-                    formatDate(date),
-
-                location: eventLocation,
-
+                category: category
             };
 
+            try {
 
-            const saved =
-                getSaved(
-                    "collegeEvents"
+                const response =
+                    await fetch(
+                        "https://bgti-updates-backend.onrender.com/api/events",
+                        {
+                            method: "POST",
+
+                            headers: {
+                                "Content-Type":
+                                    "application/json"
+                            },
+
+                            body:
+                                JSON.stringify(
+                                    newEvent
+                                )
+                        }
+                    );
+
+                const result =
+                    await response.json();
+
+                if (!response.ok) {
+
+                    throw new Error(
+                        result.error ||
+                        "Failed to add event"
+                    );
+                }
+
+                alert(
+                    "Event added successfully!"
                 );
 
+                eventForm.reset();
 
-            saved.push(
-                newEvent
-            );
+                location.reload();
 
+            } catch (error) {
 
-            saveData(
-                "collegeEvents",
-                saved
-            );
+                console.error(
+                    "Error adding event:",
+                    error
+                );
 
-
-            alert(
-                "Event added successfully!"
-            );
-
-
-            eventForm.reset();
-
-
-            location.reload();
-
+                alert(
+                    "Unable to add event. Please try again."
+                );
+            }
         }
     );
-
 }
 
 
