@@ -296,143 +296,156 @@ function loadAnnouncement() {
 loadAnnouncement();
 
 
+
 // =====================================
 // EVENTS
 // =====================================
 
-const savedEvents =
-    getSaved("collegeEvents");
-
-
-const allEvents = [
-
-    ...defaultEvents,
-
-    ...savedEvents
-
-];
-
-
 const eventList =
-    do<img src="images/bgti-logo.jpg" alt="BGTI Logo" class="bgti-logo">ment.getElementById("eventList");
+    document.getElementById("eventList");
 
 
-if (eventList) {
+async function loadEvents() {
 
-    if (allEvents.length === 0) {
-
-        eventList.innerHTML =
-            '<div class="empty">No events available.</div>';
-
+    if (!eventList) {
+        return;
     }
 
+    try {
 
-    allEvents.forEach(function (event) {
+        const response = await fetch(
+            "https://bgti-updates-backend.onrender.com/api/events"
+        );
 
-        const eventCard =
-            do<img src="images/bgti-logo.jpg" alt="BGTI Logo" class="bgti-logo">ment.createElement("div");
+        if (!response.ok) {
+            throw new Error("Failed to load events");
+        }
 
-        eventCard.className =
-            "event-card";
+        const events = await response.json();
 
+        eventList.innerHTML = "";
 
-        eventCard.innerHTML = `
+        if (events.length === 0) {
 
-            <div class="event-date">
+            eventList.innerHTML =
+                '<div class="empty">No events available.</div>';
 
-                <span class="day">
-                    ${escapeText(event.day)}
-                </span>
+            return;
+        }
 
-                <span class="month">
-                    ${escapeText(event.month)}
-                </span>
+        events.forEach(function (event) {
 
-            </div>
+            const eventCard =
+                document.createElement("div");
 
+            eventCard.className =
+                "event-card";
 
-            <div class="event-details">
+            eventCard.innerHTML = `
 
-                <h3>
-                    ${escapeText(event.title)}
-                </h3>
+                <div class="event-date">
 
-                <p>
-                    ${escapeText(event.description)}
-                </p>
-
-                <div class="event-info">
-
-                    <span>
-                        📅 ${escapeText(event.date)}
+                    <span class="day">
+                        ${escapeText(event.date || "")}
                     </span>
 
-                    <span>
-                        📍 ${escapeText(event.location)}
+                    <span class="month">
+                        EVENT
                     </span>
 
                 </div>
 
-            </div>
+                <div class="event-details">
 
-        `;
+                    <h3>
+                        ${escapeText(event.title || "")}
+                    </h3>
 
+                    <p>
+                        ${escapeText(event.description || "")}
+                    </p>
 
-        eventCard.addEventListener(
-            "click",
-            function () {
+                    <div class="event-info">
 
-                const modal =
-                    do<img src="images/bgti-logo.jpg" alt="BGTI Logo" class="bgti-logo">ment.getElementById(
-                        "eventModal"
-                    );
+                        <span>
+                            📅 ${escapeText(event.date || "")}
+                        </span>
 
-                if (!modal) {
-                    return;
+                        <span>
+                            📍 ${escapeText(
+                                event.venue ||
+                                event.location ||
+                                ""
+                            )}
+                        </span>
+
+                    </div>
+
+                </div>
+
+            `;
+
+            eventCard.addEventListener(
+                "click",
+                function () {
+
+                    const modal =
+                        document.getElementById(
+                            "eventModal"
+                        );
+
+                    if (!modal) {
+                        return;
+                    }
+
+                    document.getElementById(
+                        "modalTitle"
+                    ).textContent =
+                        event.title || "";
+
+                    document.getElementById(
+                        "modalDescription"
+                    ).textContent =
+                        event.description || "";
+
+                    document.getElementById(
+                        "modalDate"
+                    ).textContent =
+                        event.date || "";
+
+                    document.getElementById(
+                        "modalLocation"
+                    ).textContent =
+                        event.venue ||
+                        event.location ||
+                        "";
+
+                    modal.style.display =
+                        "flex";
+
                 }
+            );
 
+            eventList.appendChild(
+                eventCard
+            );
 
-                do<img src="images/bgti-logo.jpg" alt="BGTI Logo" class="bgti-logo">ment.getElementById(
-                    "modalTitle"
-                ).textContent =
-                    event.title;
+        });
 
+    } catch (error) {
 
-                do<img src="images/bgti-logo.jpg" alt="BGTI Logo" class="bgti-logo">ment.getElementById(
-                    "modalDescription"
-                ).textContent =
-                    event.description;
-
-
-                do<img src="images/bgti-logo.jpg" alt="BGTI Logo" class="bgti-logo">ment.getElementById(
-                    "modalDate"
-                ).textContent =
-                    event.date;
-
-
-                do<img src="images/bgti-logo.jpg" alt="BGTI Logo" class="bgti-logo">ment.getElementById(
-                    "modalLocation"
-                ).textContent =
-                    event.location;
-
-
-                modal.style.display =
-                    "flex";
-
-            }
+        console.error(
+            "Error loading events:",
+            error
         );
 
-
-        eventList.appendChild(
-            eventCard
-        );
-
+        eventList.innerHTML =
+            '<div class="empty">Unable to load events.</div>';
     }
-
-    );
-
 }
 
+
+loadEvents();
 
 // =====================================
 // EVENT SEARCH
