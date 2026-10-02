@@ -28,6 +28,17 @@ app.get("/", (req, res) => {
 app.get("/test-event", (req, res) => {
     res.send("Event API is ready!");
 });
+app.get("/api/events", async (req, res) => {
+    try {
+        const events = await Event.find().sort({ createdAt: -1 });
+        res.json(events);
+    } catch (error) {
+        res.status(500).json({
+            message: "Error fetching events",
+            error: error.message
+        });
+    }
+});
 // Create Event
 app.post("/api/events", async (req, res) => {
     try {
